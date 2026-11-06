@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BXH Nhạc Mới - SOUNDWAVE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">♪</span>
+        <span class="logo-text">SOUNDWAVE</span>
+      </a>
+      <nav class="menu">
+        <a href="#" class="menu-item"><span class="ico">📚</span> Thư viện</a>
+        <a href="index.html" class="menu-item"><span class="ico">🧭</span> Khám phá</a>
+        <a href="#" class="menu-item"><span class="ico">📈</span> #soundwavechart <span class="live">LIVE</span></a>
+        <a href="#" class="menu-item"><span class="ico">📻</span> Radio</a>
+      </nav>
+      <div class="divider"></div>
+      <nav class="menu">
+        <a href="moi-phat-hanh.html" class="menu-item active"><span class="ico">🎵</span> BXH Nhạc Mới</a>
+        <a href="#" class="menu-item"><span class="ico">🗂️</span> Chủ đề &amp; Thể loại</a>
+        <a href="#" class="menu-item"><span class="ico">⭐</span> Top 100</a>
+      </nav>
+      <div class="promo">
+        <p>Nghe nhạc không quảng cáo cùng kho nhạc PREMIUM</p>
+        <button class="btn-yellow">NÂNG CẤP TÀI KHOẢN</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <header class="header">
+        <div class="nav-arrows">
+          <button class="icon-btn" aria-label="Quay lại" onclick="history.back()">←</button>
+          <button class="icon-btn" aria-label="Tiếp" onclick="history.forward()">→</button>
+        </div>
+        <div class="search">
+          <span>🔍</span>
+          <input type="text" placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát...">
+        </div>
+        <div class="header-right">
+          <button class="btn-pill">Nâng cấp tài khoản</button>
+          <button class="icon-btn" aria-label="Cài đặt">⚙</button>
+          <div class="avatar">T</div>
+        </div>
+      </header>
+
+      <div class="release-bg"></div>
+
+      <div class="content">
+        <section class="release-hero">
+          <h1>BXH Nhạc Mới</h1>
+          <button class="hero-play" id="playAllBtn" title="Phát tất cả">▶</button>
+        </section>
+
+        <div class="tabs">
+          <button class="tab active">VIỆT NAM</button>
+          <button class="tab">US-UK</button>
+          <button class="tab">K-POP</button>
+        </div>
+
+        <section class="release-table">
+          <div class="release-row release-head">
+            <div class="col-rank"></div>
+            <div class="col-song">BÀI HÁT</div>
+            <div class="col-album">ALBUM</div>
+            <div class="col-time">THỜI GIAN</div>
+          </div>
+          <div id="releaseList"></div>
+        </section>
+
+        <footer class="footer">
+          <p>© 2026 SOUNDWAVE — Bài tập HTML/CSS/JS. Nội dung minh họa.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- PLAYER BAR -->
+  <div class="player">
+    <div class="player-left">
+      <div class="thumb" id="pThumb"></div>
+      <div>
+        <div class="p-title" id="pTitle">Chọn một bài hát</div>
+        <div class="p-artist" id="pArtist">—</div>
+      </div>
+      <button class="icon-btn heart" id="heartBtn">♡</button>
+    </div>
+    <div class="player-center">
+      <div class="controls">
+        <button class="icon-btn" id="shuffleBtn" title="Trộn">⤮</button>
+        <button class="icon-btn" id="prevBtn" title="Bài trước">⏮</button>
+        <button class="play-btn" id="playBtn" title="Phát">▶</button>
+        <button class="icon-btn" id="nextBtn" title="Bài tiếp">⏭</button>
+        <button class="icon-btn" id="repeatBtn" title="Lặp lại">⟳</button>
+      </div>
+      <div class="progress">
+        <span id="curTime">00:00</span>
+        <input type="range" id="seek" min="0" max="100" value="0">
+        <span id="durTime">00:00</span>
+      </div>
+    </div>
+    <div class="player-right">
+      <button class="icon-btn" id="embedToggle" title="Trình phát nhúng">🎶</button>
+      <span>🔊</span>
+      <input type="range" id="volume" min="0" max="100" value="70">
+    </div>
+  </div>
+
+  <!-- KHUNG TRÌNH PHÁT NHÚNG -->
+  <div class="embed-panel" id="embedPanel">
+    <div class="embed-head">
+      <span>Trình phát nhúng</span>
+      <button class="icon-btn" id="embedClose" title="Đóng">✕</button>
+    </div>
+    <iframe id="embedFrame" scrolling="no" width="640" height="180" src="about:blank" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
